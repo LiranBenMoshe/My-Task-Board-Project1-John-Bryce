@@ -1,0 +1,133 @@
+body {
+    background-image: url("assets/Board.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+}
+
+h1::before {
+    transform: scaleX(0);
+    transform-origin: bottom right;
+}
+
+h1:hover::before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+h1::before {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    inset: 0 0 0 0;
+    background: hsl(0, 0%, 100%);
+    z-index: -1;
+    transition: transform .3s ease;
+}
+
+h1 {
+    font: italic small-caps bold 16px/2 cursive;
+    position: relative;
+    font-size: 4rem;
+    transform: scale(0.75);
+}
+
+form {
+    font: italic small-caps bold 16px/2 cursive;
+    background-image: url("assets/Notebook.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 300px;
+    width: 400px;
+    top: 50px;
+    border: 1px solid;
+    padding: 10px;
+    display: inline-block;
+}
+
+#sectionTasks {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.task {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    background-image: url("assets/Note.png");
+    background-size: cover;
+    overflow: hidden;
+    height: 220px;
+    width: 400px;
+    position: relative;
+}
+
+.task:last-child.fade-in {
+    animation: fade-in 1s forwards;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+.task-time {
+    font-size: 20px;
+    position: absolute;
+    margin-top: 3px;
+    left: 70px;
+    color: black;
+}
+
+.task-description-container {
+    margin-top: 50px;
+    margin-right: 5px;
+    margin-left: 90px;
+    height: 120px;
+    width: 200px;
+    white-space: normal;
+    text-align: left;
+    overflow-x: hidden;
+    overflow-y: auto;
+    word-wrap: break-word;
+}
+
+.task-description {
+    font-size: 18px;
+    text-align: left;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.remove {
+    border: none;
+    background-color: transparent;
+    position: absolute;
+    top: 40px;
+    right: 90px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.task:hover .remove {
+    opacity: 1;
+}
+
+textarea {
+    resize: none;
+}
