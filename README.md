@@ -21,3 +21,5 @@ My Task Board is a web application that helps users manage their tasks effective
 6. To remove a task, click on the task and then click the remove button.
 
 Feel free to explore and customize the project based on your preferences. Happy task management!
+
+This project is licensed under the GNU General Public License v3.0.
